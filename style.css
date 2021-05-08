@@ -1,0 +1,29 @@
+body, html {
+    height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("bg.jpg");
+    font-family: 'Raleway', sans-serif;
+    
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    vertical-align: middle;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
