@@ -1,8 +1,9 @@
-var country = "Canada"
-var background_jpg = ""
+var country = "Canada";
+var background_jpg = "";
 
-function get_country () {
-    country = document.getElementById("Country").value
+function getCountry() {
+    country = document.getElementById("Country").value;
+    localStorage.setItem("myCountry", country);
     background_jpg = null;
     switch (country) {
         case 'Canada':
@@ -18,5 +19,19 @@ function get_country () {
             background_jpg = ""
             break;
     }
-    location.href = "bear.html"
+    location.href = "bear.html";
+}
+
+function loadCountry() {
+    country = localStorage.getItem("myCountry")
+    var showCountry = document.createElement("showContry");
+    showCountry.innerHTML = country;
+    document.getElementById("title").appendChild(showCountry);
+}
+
+
+var progress = null;
+
+function moveForward(){
+    progress = localStorage.getItem("currentProgress")
 }

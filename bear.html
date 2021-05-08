@@ -5,12 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="index.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="styleBear.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <title>Save the Polar Bear</title>
 </head>
-<body>
-    <p align="center" id="aha">Yeah!</p>
-    <script>
-         document.getElementById("aha").innerHTML = country
-    </script>
+
+<body onload="loadCountry()">
+    <div align="center" id="title">
+        <p>Your Country: </p>  
+    </div>
+
+    <div id="forward">
+        <button id="xx" onclick="loadCountry();">Something</button>
+        <a onclick="loadCountry();" class="goButton" style="font-weight: 500;"><img src="forward.jpg" width="30" align="center"></a>
+    </div>
+
+    <div id="backward">
+        <a onclick=";" class="backwardButton" style="font-weight: 500;" img=""></a>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
