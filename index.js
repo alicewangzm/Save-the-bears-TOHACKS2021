@@ -35,3 +35,4 @@ var progress = null;
 function moveForward(){
     progress = localStorage.getItem("currentProgress")
 }
+

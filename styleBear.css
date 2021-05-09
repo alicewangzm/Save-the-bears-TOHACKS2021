@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-image: url("bg.gif");
+    background-image: url("iceberg.gif");
     font-family: 'Raleway', sans-serif;
     color: #1e2e3a;
     height: 100%;
@@ -17,4 +17,61 @@ body {
     background-size: cover;
 
     vertical-align: middle;
+}
+
+.title {
+    margin-top: 30px;
+    font-size: 36px;
+}
+
+
+.nextBtn {
+    vertical-align: middle;
+}
+
+
+
+
+
+
+.popup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.formPopup {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 5%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+}
+
+.formContainer {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.formContainer .btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #8ebf42;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+tex
+.formContainer .btn:hover,
+.openButton:hover {
+    opacity: 1;
+}
+
+.pb{
+    margin: 40px;
 }
