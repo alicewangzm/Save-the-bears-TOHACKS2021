@@ -5,7 +5,7 @@
 
 const number_of_questions = 10;
 
-Answers = ['c', 'b', 'a', 'c', 'b', 'a', 'c', 'b', 'a', 'd']
+Answers = ['c', 'd', 'c', 'b', 'a', 'a', 'b', 'c', 'a', 'd']
 
 function checkRefresh() {
     if (localStorage.getItem('refresh') == "true"){
