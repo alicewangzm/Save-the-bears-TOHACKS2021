@@ -70,6 +70,7 @@ body {
 
 .pb{
     margin: 40px;
+    bottom: 20%;
 }
 
 .showScore {
@@ -81,4 +82,23 @@ body {
     background-color: #70a0c0;
     color: rgb(156, 48, 48);
     font-weight: bold;
+}
+
+
+.bear-ice{
+    text-align: center;
+}
+
+img{
+    width: 60%;
+    margin: auto;
+    display: block;
+}
+.bear{
+    z-index: -2;
+    width: 10%
+}
+.ice{
+    z-index: -1;
+    width: 20%;
 }

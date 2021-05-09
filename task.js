@@ -57,3 +57,4 @@ function stateHandle(button, i) {
       button.disabled = false; //button is enabled
     }
 }
+a
