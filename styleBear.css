@@ -1,0 +1,85 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url("iceberg.gif");
+    font-family: 'Raleway', sans-serif;
+    color: #1e2e3a;
+    height: 100%;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    vertical-align: middle;
+}
+
+.title {
+    margin-top: 30px;
+    font-size: 36px;
+}
+
+
+.nextBtn {
+    vertical-align: middle;
+}
+
+
+.popup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.formPopup {
+    display: none;
+    position: fixed;
+    left: 50%;  
+    top: 30%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+}
+
+.formContainer {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.formContainer .btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #8ebf42;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.formContainer .btn:hover,
+.openButton:hover {
+    opacity: 1;
+}
+
+.pb{
+    margin: 40px;
+    bottom: 20%;
+}
+
+.showScore {
+    top: 70%;
+    font-size: 30px;
+    position: fixed;
+    padding: 12px 20px;
+    border: 10px;
+    background-color: #70a0c0;
+    color: rgb(156, 48, 48);
+    font-weight: bold;
+}

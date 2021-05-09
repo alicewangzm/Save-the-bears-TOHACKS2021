@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="styleBear.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <title>Save the Polar Bear</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body onLoad="JavaScript:checkRefresh();">
+
+    <div align="center" class="title" id="title">
+        <script>
+            loadCountry()
+        </script>
+    </div>
+
+    <div id="forward" class="nextBtn" style="height: 100%; vertical-align: middle;">
+        <a onclick="openForm();" class="goButton">
+            <img id="next" src="forward.png" width="100" style="float: right; margin-right: 5%;">
+        </a>
+    </div>
+
+    <script type="text/javascript" src="task.js"></script>
+
+    
+    <div class="showScore" id="score">
+        <script>
+            var score = document.getElementById("score")
+            if (localStorage.getItem("score") != null){
+                update_score()
+            } else {
+                const text = document.createTextNode("Score: 100")
+                score.appendChild(text)
+            }   
+        </script>
+    </div>
+
+    <div class="openBtn">
+        <!--
+            Reference: https://www.earthday.org/the-climate-change-quiz/
+        -->
+    </div>
+    <div class="popup">
+        <div class="formPopup" id="popup1">
+            <form action="bear.html" class="formContainer" id="Q1">
+                <h2 style="font-size: 18px; line-height: 20px;">Today you have a climate change trivia:<br><br>What
+                    percentage of the global greenhouse gas emissions
+                    does the transportation sector emit?</h2>
+                <input type="radio" name="trivia" value="a">1%<br>
+                <input type="radio" name="trivia" value="b">14%<br>
+                <input type="radio" name="trivia" value="c">29%<br>
+                <input type="radio" name="trivia" value="d">70%
+                <button type="submit" class="btn" id="btn1" onclick="collectAnswer()" style="margin-top: 20px;">Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup2">
+            <form action="bear.html" class="formContainer" id="Q2">
+                <h2 style="font-size: 18px; line-height: 20px;">Globally, which of the following economic sectors emits the largest percentage of greenhouse gas emissions?</h2>
+                <input type="radio" name="trivia" value="a">Transportation<br>
+                <input type="radio" name="trivia" value="b">Building<br>
+                <input type="radio" name="trivia" value="c">Industry<br>
+                <input type="radio" name="trivia" value="d">Electrcity and heat production
+                <button type="submit" class="btn" id="btn2" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup3">
+            <form action="bear.html" class="formContainer" id="Q3">
+                <h2 style="font-size: 18px; line-height: 20px;">Which has been the hottest year on record?</h2>
+                <input type="radio" name="trivia" value="a">2016<br>
+                <input type="radio" name="trivia" value="b">2020<br>
+                <input type="radio" name="trivia" value="c">All of the above<br>
+                <input type="radio" name="trivia" value="d">None of the above
+                <button type="submit" class="btn" id="btn3" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup4">
+            <form action="bear.html" class="formContainer" id="Q4">
+                <h2 style="font-size: 18px; line-height: 20px;">Which of the following is the biggest cause of global warming?</h2>
+                <input type="radio" name="trivia" value="a">Decomposing plants<br>
+                <input type="radio" name="trivia" value="b">Burning oil, gas and coal<br>
+                <input type="radio" name="trivia" value="c">Natural variation of the planet<br>
+                <input type="radio" name="trivia" value="d">Pollution from wildfires
+                <button type="submit" class="btn" id="btn4" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup5">
+            <form action="bear.html" class="formContainer" id="Q5">
+                <h2 style="font-size: 18px; line-height: 20px;">How much has sea level risen since 1900 (global average)?</h2>
+                <input type="radio" name="trivia" value="a">21cm<br>
+                <input type="radio" name="trivia" value="b">24cm<br>
+                <input type="radio" name="trivia" value="c">30cm<br>
+                <input type="radio" name="trivia" value="d">63cm
+                <button type="submit" class="btn" id="btn5" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup6">
+            <form action="bear.html" class="formContainer" id="Q6">
+                <h2 style="font-size: 18px; line-height: 20px;">What percentage of the earth’s atmosphere is comprised of carbon dioxide, the greenhouse gas?</h2>
+                <input type="radio" name="trivia" value="a">0.04<br>
+                <input type="radio" name="trivia" value="b">1.04<br>
+                <input type="radio" name="trivia" value="c">4.04<br>
+                <input type="radio" name="trivia" value="d">40.04
+                <button type="submit" class="btn" id="btn6" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup7">
+            <form action="bear.html" class="formContainer" id="Q7">
+                <h2 style="font-size: 18px; line-height: 20px;">What is the goal of the 2015 Paris climate accord?</h2>
+                <input type="radio" name="trivia" value="a">Limit global warming to well below 1C<br>
+                <input type="radio" name="trivia" value="b">Limit global warming to well below 2C<br>
+                <input type="radio" name="trivia" value="c">Limit global warming to well below 4C<br>
+                <input type="radio" name="trivia" value="d">Eradicate fossil fuels
+                <button type="submit" class="btn" id="btn7" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup8">
+            <form action="bear.html" class="formContainer" id="Q8">
+                <h2 style="font-size: 18px; line-height: 20px;">What percentage of the world’s electricity came from wind and solar power (in Q1 2020)?</h2>
+                <input type="radio" name="trivia" value="a">5%<br>
+                <input type="radio" name="trivia" value="b">7%<br>
+                <input type="radio" name="trivia" value="c">9%<br>
+                <input type="radio" name="trivia" value="d">11%
+                <button type="submit" class="btn" id="btn8" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup9">
+            <form action="bear.html" class="formContainer" id="Q9">
+                <h2 style="font-size: 18px; line-height: 20px;">What is the world’s simplest molecule and a potential source of clean energy?</h2>
+                <input type="radio" name="trivia" value="a">Hydrogen<br>
+                <input type="radio" name="trivia" value="b">Methane<br>
+                <input type="radio" name="trivia" value="c">Ammonia<br>
+                <input type="radio" name="trivia" value="d">Lithium
+                <button type="submit" class="btn" id="btn9" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+        <div class="formPopup" id="popup10">
+            <form action="bear.html" class="formContainer" id="Q10">
+                <h2 style="font-size: 18px; line-height: 20px;">How did global energy-related CO2 emissions change during 2020, compared with 2019? (in per cent)</h2>
+                <input type="radio" name="trivia" value="a">2<br>
+                <input type="radio" name="trivia" value="b">4<br>
+                <input type="radio" name="trivia" value="c">6<br>
+                <input type="radio" name="trivia" value="d">-6
+                <button type="submit" class="btn" id="btn10" onclick="collectAnswer()" style="margin-top: 20px;" >Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function openForm() {
+            moveForward()
+            progress = localStorage.getItem("currentProgress")
+            popup_id = "popup" + progress.toString()
+            document.getElementById(popup_id).style.display = "block";
+        }
+    </script>
+
+
+    <!--Progress Bar
+        source: https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-progress-bars.php
+    -->
+    <div class="pb">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" style="min-width: 20px;"></div>
+            <script type="text/javascript">
+                makeProgress();
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
