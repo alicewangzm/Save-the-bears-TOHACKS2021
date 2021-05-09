@@ -24,9 +24,10 @@ function getCountry() {
 }
 
 function loadCountry() {
-    country = localStorage.getItem("myCountry")
+    country = localStorage.getItem("myCountry");
     var showCountry = document.createElement("showContry");
     showCountry.innerHTML = country;
+    showCountry.style = "font-family: Raleway, sans-serif;"
     document.getElementById("title").appendChild(showCountry);
 }
 
@@ -34,7 +35,7 @@ function loadCountry() {
 function moveForward(){    
     progress = parseInt(localStorage.getItem("currentProgress"))
     localStorage.setItem("currentProgress", progress + 1)
-    if (localStorage.getItem("currentProgress") == number_of_questions){
+    if (localStorage.getItem("currentProgress") == number_of_questions-8){
         final_score()
     }
 }
@@ -51,6 +52,7 @@ function makeProgress() {
 
 
 function final_score(){
+    location.href = "final.html";
 }
 
 function update_score(){

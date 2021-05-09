@@ -19,16 +19,18 @@
 
 <body onLoad="JavaScript:checkRefresh();">
 
-    <div align="center" class="title" id="title">
-        <script>
-            loadCountry()
-        </script>
-    </div>
+    <div class="ctn">
+        <div align="center" class="title" id="title">
+            <script>
+                loadCountry()
+            </script>
+        </div>
 
-    <div id="forward" class="nextBtn" style="height: 100%; vertical-align: middle;">
-        <a onclick="openForm();" class="goButton">
-            <img id="next" src="forward.png" width="100" style="float: right; margin-right: 5%;">
-        </a>
+        <div id="forward" class="nextBtn">
+            <a onclick="openForm();" class="goButton">
+                <img id="next" src="forward.png" width="100" style="float: right; margin-right: 5%;">
+            </a>
+        </div>
     </div>
 
     <script type="text/javascript" src="task.js"></script>
@@ -55,6 +57,17 @@
         <!--
             Reference: https://www.earthday.org/the-climate-change-quiz/
         -->
+    </div>
+        <!--Progress Bar
+        source: https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-progress-bars.php
+        -->
+    <div class="pb">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" style="min-width: 20px;"></div>
+            <script type="text/javascript">
+                makeProgress();
+            </script>
+        </div>
     </div>
     <div class="popup">
         <div class="formPopup" id="popup1">
@@ -172,17 +185,7 @@
     </script>
 
 
-    <!--Progress Bar
-        source: https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-progress-bars.php
-    -->
-    <div class="pb">
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped" style="min-width: 20px;"></div>
-            <script type="text/javascript">
-                makeProgress();
-            </script>
-        </div>
-    </div>
+
 </body>
 
 </html>
