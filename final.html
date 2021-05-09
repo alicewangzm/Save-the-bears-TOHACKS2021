@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score</title>
+    <link rel="stylesheet" href="styleFinal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg" align="center" color="#1e2e3a">
+        <div style="width: 100%; height: 10%;">
+        </div>
+        <div id="aha"
+            style="font-family: 'Raleway', sans-serif; color: #1e2e3a; font-size: 28px; text-align: center; line-height: 40px;">
+        </div>
+        <img id="img" src="ice.png"
+            style="height: 600px; display: block; margin-left: auto; margin-right: auto; width: 50%;">
+    </div>
+
+    <script type="text/javascript">
+        score = document.createTextNode("score_node")
+        score_val = parseInt(localStorage.getItem("score"))
+        if (score_val >= 40) {
+            score = document.createTextNode("Good Job! You score is " + localStorage.getItem("score") + "!")
+            score.style = "font-family: Raleway, sans-serif;"
+            announcement = document.getElementById("aha")
+            announcement.appendChild(score)
+            document.getElementById("img").src = "polarBear.gif"
+        } else {
+            score = document.createTextNode("Oops! You score is: " + localStorage.getItem("score") + "!")
+            score.style = "font-family: Raleway, sans-serif;"
+            announcement = document.getElementById("aha") 
+            announcement.appendChild(score)
+            oops()
+        }
+
+        function oops() {
+            document.getElementById("img").src = "ice2.png"
+            setTimeout(oops, 2800)
+        }
+    </script>
+</body>
+
+</html>
