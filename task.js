@@ -5,13 +5,14 @@
 
 const number_of_questions = 10;
 
-Answers = ['c', 'b', 'a']
+Answers = ['c', 'b', 'a', 'c', 'b', 'a', 'c', 'b', 'a', 'd']
 
 function checkRefresh() {
     if (localStorage.getItem('refresh') == "true"){
         localStorage.setItem("currentProgress", 0)
         localStorage.setItem("score", 100)
         localStorage.setItem("refresh", "false")
+        makeProgress()
     }
 }
 
@@ -28,5 +29,31 @@ function collectAnswer() {
         deduct_score()      
     }
     update_score()
-    setTimeout("makeProgress()", 3000)     
+    makeProgress()   
+}
+
+function sleep(milliseconds) {
+    let timeStart = new Date().getTime();
+    while (true) {
+      let elapsedTime = new Date().getTime() - timeStart;
+      if (elapsedTime > milliseconds) {
+        break;
+      }
+    }
+  }
+
+
+for (var i = 1; i < number_of_questions + 1; i++) {
+    btn_id = "btn" + i.toString()
+    var button = document.getElementById(btn_id)
+    //button.disabled = true
+    button.addEventListener('change', function(){stateHandle(button, i)})
+}
+
+function stateHandle(button, i) {
+    if (document.getElementById("Q" + i.toString()).elements['trivia'].value == "") {
+      button.disabled = true; //button remains disabled
+    } else {
+      button.disabled = false; //button is enabled
+    }
 }

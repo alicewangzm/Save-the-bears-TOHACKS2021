@@ -35,27 +35,22 @@ function moveForward(){
     progress = parseInt(localStorage.getItem("currentProgress"))
     localStorage.setItem("currentProgress", progress + 1)
     if (localStorage.getItem("currentProgress") == number_of_questions){
-        show_score()
+        final_score()
     }
 }
-var i = 0
+
 function makeProgress() {
-    /*
+    
     progress = parseInt(localStorage.getItem("currentProgress"))
     percentage = Math.round(progress / number_of_questions * 100)
 
     $(".progress-bar").css("width", percentage + "%").text(percentage + " %");
-    */
-    if(i < 100){
-        i = i + 1;
-        $(".progress-bar").css("width", i + "%").text(i + " %");
-    }
-    // Wait for sometime before running this script again
-    setTimeout("makeProgress()", 100);
+        
+    //setTimeout("makeProgress()", 500);
 }
 
 
-function show_score(){
+function final_score(){
 }
 
 function update_score(){
