@@ -30,10 +30,6 @@ body {
 }
 
 
-
-
-
-
 .popup {
     position: relative;
     text-align: center;
@@ -43,8 +39,8 @@ body {
 .formPopup {
     display: none;
     position: fixed;
-    left: 45%;
-    top: 5%;
+    left: 50%;  
+    top: 30%;
     transform: translate(-50%, 5%);
     border: 3px solid #999999;
     z-index: 9;
@@ -66,7 +62,7 @@ body {
     margin-bottom: 15px;
     opacity: 0.8;
 }
-tex
+
 .formContainer .btn:hover,
 .openButton:hover {
     opacity: 1;
@@ -74,4 +70,15 @@ tex
 
 .pb{
     margin: 40px;
+}
+
+.showScore {
+    top: 70%;
+    font-size: 30px;
+    position: fixed;
+    padding: 12px 20px;
+    border: 10px;
+    background-color: #70a0c0;
+    color: rgb(156, 48, 48);
+    font-weight: bold;
 }

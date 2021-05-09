@@ -17,7 +17,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body onLoad="JavaScript:checkRefresh();">
+
     <div align="center" class="title" id="title">
         <script>
             loadCountry()
@@ -25,25 +26,34 @@
     </div>
 
     <div id="forward" class="nextBtn" style="height: 100%; vertical-align: middle;">
-        <a onclick="moveForward();" class="goButton">
+        <a onclick="openForm();" class="goButton">
             <img id="next" src="forward.png" width="100" style="float: right; margin-right: 5%;">
         </a>
     </div>
 
-
-
     <script type="text/javascript" src="task.js"></script>
+
+    
+    <div class="showScore" id="score">
+        <script>
+            var score = document.getElementById("score")
+            if (localStorage.getItem("score") != null){
+                update_score()
+            } else {
+                const text = document.createTextNode("Score: 100")
+                score.appendChild(text)
+            }   
+        </script>
+    </div>
 
     <div class="openBtn">
         <!--
-            <form onsubmit="return setAction(this)">
-            https://www.javascript-coder.com/html-form/html-form-action/
+            Reference: https://www.earthday.org/the-climate-change-quiz/
         -->
-        <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
     </div>
     <div class="popup">
-        <div class="formPopup" id="popupForm">
-            <form action="/action_page.php" class="formContainer">
+        <div class="formPopup" id="popup1">
+            <form action="bear.html" class="formContainer" id="Q1">
                 <h2 style="font-size: 18px; line-height: 20px;">Today you have a climate change trivia:<br><br>What
                     percentage of the global greenhouse gas emissions
                     does the transportation sector emit?</h2>
@@ -51,17 +61,30 @@
                 <input type="radio" name="trivia" value="b">14%<br>
                 <input type="radio" name="trivia" value="c">33%<br>
                 <input type="radio" name="trivia" value="d">70%
-                <button type="submit" class="btn" style="margin-top: 20px;">Submit</button>
+                <button type="submit" class="btn" onclick="collectAnswer()" style="margin-top: 20px;">Submit</button>
             </form>
         </div>
+        <div class="formPopup" id="popup2">
+            <form action="bear.html" class="formContainer" id="Q2">
+                <h2 style="font-size: 18px; line-height: 20px;">Today you have a climate change trivia:<br><br>What
+                    percentage of the global greenhouse gas emissions
+                    does the transportation sector emit?</h2>
+                <input type="radio" name="trivia" value="a">100%<br>
+                <input type="radio" name="trivia" value="b">140%<br>
+                <input type="radio" name="trivia" value="c">330%<br>
+                <input type="radio" name="trivia" value="d">700%
+                <button type="submit" class="btn" onclick="collectAnswer()" style="margin-top: 20px;">Submit</button>
+            </form>
+        </div>
+
     </div>
+
     <script>
         function openForm() {
-            document.getElementById("popupForm").style.display = "block";
-        }
-
-        function closeForm() {
-            document.getElementById("popupForm").style.display = "none";
+            moveForward()
+            progress = localStorage.getItem("currentProgress")
+            popup_id = "popup" + progress.toString()
+            document.getElementById(popup_id).style.display = "block";
         }
     </script>
 
@@ -72,18 +95,10 @@
     <div class="pb">
         <div class="progress">
             <div class="progress-bar progress-bar-striped" style="min-width: 20px;"></div>
+            <script type="text/javascript">
+                makeProgress();
+            </script>
         </div>
-
-        <script type="text/javascript">
-            function makeProgress() {
-                const total_task = 12
-                progress = 2 //localStorage.getItem("currentProgress")
-                percentage = Math.round(progress / total_task * 100)
-
-                $(".progress-bar").css("width", percentage + "%").text(percentage + " %");
-            }
-            makeProgress();
-        </script>
     </div>
 </body>
 
